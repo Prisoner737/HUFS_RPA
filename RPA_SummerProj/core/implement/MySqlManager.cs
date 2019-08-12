@@ -2,7 +2,7 @@
 using System.Text;
 using MySql.Data.MySqlClient;
 
-namespace RPA_SummerProj
+namespace RPA_SummerProj.core.implement
 {
     class MySqlManager : IDisposable
     {
@@ -38,6 +38,7 @@ namespace RPA_SummerProj
             {
                 Console.WriteLine(ex.ToString());
             }
+
         }
 
         public MySqlCommand MySqlCommandSend(string sqlInfo)
