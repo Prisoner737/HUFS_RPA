@@ -38,6 +38,7 @@ namespace RPA_SummerProj
             {
                 Console.WriteLine(ex.ToString());
             }
+
         }
 
         public MySqlCommand MySqlCommandSend(string sqlInfo)
