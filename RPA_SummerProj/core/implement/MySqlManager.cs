@@ -65,7 +65,7 @@ namespace RPA_SummerProj.core.implement
             MySqlDataReader rdr = MySqlCommandSend(sqlInfo).ExecuteReader();
             while (rdr.Read())
             {
-                sqlResult.Append(rdr[0] + " -- " + rdr[1]);
+                sqlResult.Append(rdr[0] + " -- " + rdr[1] + "\n");
                 Console.WriteLine(rdr[0] + " -- " + rdr[1]);
             }
             rdr.Close();
@@ -78,16 +78,18 @@ namespace RPA_SummerProj.core.implement
             MySqlCommandSend(sqlInfo).ExecuteNonQuery();
         }
 
-        public T MySqlSGCommand<T>(string sqlInfo)
+        public int MySqlSGCommand(string sqlInfo)
         {
             object result = MySqlCommandSend(sqlInfo).ExecuteScalar();
             if (result != null)
             {
                 int r = Convert.ToInt32(result);
-                Console.WriteLine("Number of countries in the world database is: " + r);
+                return r;
             }
-
-            return (T)Convert.ChangeType(result, typeof(T));
+            else
+            {
+                return -1;
+            }
         }
 
         public void Dispose()
