@@ -16,30 +16,6 @@ namespace RPA_SummerProj.core.implement
         static Excel.Worksheet eWS = null;
         static Excel.Range eRng;
 
-
-        static void Main(string[] args)
-        {
-            //Create();
-            Open(@"C:\test.xlsx");
-            Append();
-            //Delete("완성");
-            //Save(@"C:\Users\harry\source\test.xlsx");
-            //Close();
-            object[,] data = { { "Hello" }, { "Hey" } };
-            Write_Range("Sheet1", "A1", "A2", data);
-            Write_Cell("Sheet1", "B1", "Hi");
-            Range_Char_Color("Sheet1", "A1", "A1", Color.Red);
-            Range_Cell_Color("Sheet1", "A1", "A1", Color.Green);
-            object[,] data2 = Read_Range("Sheet1", "A1", "A2");
-            foreach (var item in data2)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine(Read_Cell("Sheet1", "B1"));
-            ReleaseExcelObject(eWS);
-            ReleaseExcelObject(eWB);
-            ReleaseExcelObject(eXL);
-        }
         #region Primitive Function
         //새로운 excel worksheet하나생성
         public static void Create()
