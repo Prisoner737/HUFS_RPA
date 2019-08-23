@@ -6,8 +6,9 @@ using System.Windows.Forms;
 
 namespace RPA_SummerProj
 {
-    static class Program
+    class Program
     {
+        public Dictionary<string, object> appInstance = new Dictionary<string, object>();
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>
