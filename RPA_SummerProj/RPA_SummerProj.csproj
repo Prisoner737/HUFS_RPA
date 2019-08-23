@@ -54,7 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\implement\Excel_Functions.cs" />
+    <Compile Include="core\module\Append.cs" />
+    <Compile Include="core\module\Close.cs" />
     <Compile Include="core\module\Create.cs" />
+    <Compile Include="core\module\Delete.cs" />
+    <Compile Include="core\module\Open.cs" />
+    <Compile Include="core\module\Read_Cell.cs" />
+    <Compile Include="core\module\Read_Range.cs" />
+    <Compile Include="core\module\Save.cs" />
+    <Compile Include="core\module\Write_Cell.cs" />
+    <Compile Include="core\module\Write_Range.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
