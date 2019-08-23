@@ -101,5 +101,9 @@
   <ItemGroup>
     <Folder Include="testCode\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="core\implement\Readme.txt" />
+    <Content Include="core\module\Readme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
