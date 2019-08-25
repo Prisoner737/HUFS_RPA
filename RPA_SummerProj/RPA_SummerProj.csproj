@@ -56,11 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\implement\MailManager.cs" />
+    <Compile Include="core\module\OutlookDeleteBySenderName.cs" />
     <Compile Include="core\module\MySqlNoReturn.cs" />
     <Compile Include="core\module\MySqlReturnSingleInt.cs" />
     <Compile Include="core\module\MySqlReturnTable.cs" />
+    <Compile Include="core\module\OutlookDeleteBySubject.cs" />
+    <Compile Include="core\module\OutlookMoveMailToFolder.cs" />
     <Compile Include="core\module\OutlookSend.cs" />
-    <Compile Include="core\module\OutlookShowMSG.cs" />
+    <Compile Include="core\module\OutlookShowUnReadMSG.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
