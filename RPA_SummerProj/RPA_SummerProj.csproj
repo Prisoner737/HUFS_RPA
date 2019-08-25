@@ -99,6 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="core\module\" />
     <Folder Include="testCode\" />
   </ItemGroup>
   <ItemGroup>
