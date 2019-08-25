@@ -38,7 +38,7 @@ namespace RPA_SummerProj.core.implement
         }
 
 
-        public void receiveMail()
+        public void showUnReadMail()
         {
             try
             {
@@ -108,7 +108,7 @@ namespace RPA_SummerProj.core.implement
             }
         }
 
-        public void moveMailFolder(string folderName, string targetMail)
+        public void moveMailFolder(string targetMail, string folderName)
         {
             Outlook.MAPIFolder inBox = _ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
             Outlook.Items items = (Outlook.Items)inBox.Items;
@@ -135,5 +135,96 @@ namespace RPA_SummerProj.core.implement
                 }
             }
         }
+
+        public void findMailBySender(string sender, string folderName)
+        {
+            Outlook.MAPIFolder inBox = _ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+            Outlook.MailItem tgtMail = null;
+            Outlook.MAPIFolder destFolder = inBox.Folders[folderName];
+
+            foreach (object eMail in destFolder.Items)
+            {
+                try
+                {
+                    tgtMail = eMail as Outlook.MailItem;
+                    if (tgtMail != null)
+                    {
+                        string titleSubject = (string)tgtMail.SenderName;
+                        if (titleSubject.IndexOf(sender) > 0)
+                        {
+                            Console.WriteLine("Subject : " + tgtMail.Subject);
+                            Console.WriteLine("Sender Name : " + tgtMail.SenderName);
+                            Console.WriteLine("Body : " + tgtMail.HTMLBody);
+                            Console.WriteLine("Data : " + tgtMail.SentOn.ToLongDateString() + " " + tgtMail.SentOn.ToLongTimeString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        public void findMailBySubject(string subject, string folderName)
+        {
+            Outlook.MAPIFolder inBox = _ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+            Outlook.MailItem tgtMail = null;
+            Outlook.MAPIFolder destFolder = inBox.Folders[folderName];
+
+            foreach (object eMail in destFolder.Items)
+            {
+                try
+                {
+                    tgtMail = eMail as Outlook.MailItem;
+                    if (tgtMail != null)
+                    {
+                        string titleSubject = (string)tgtMail.Subject;
+                        if (titleSubject.IndexOf(subject) > 0)
+                        {
+                            Console.WriteLine("Subject : " + tgtMail.Subject);
+                            Console.WriteLine("Sender Name : " + tgtMail.SenderName);
+                            Console.WriteLine("Body : " + tgtMail.HTMLBody);
+                            Console.WriteLine("Data : " + tgtMail.SentOn.ToLongDateString() + " " + tgtMail.SentOn.ToLongTimeString()); ;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        public void findMailByBody(string body, string folderName)
+        {
+            Outlook.MAPIFolder inBox = _ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+            Outlook.MailItem tgtMail = null;
+            Outlook.MAPIFolder destFolder = inBox.Folders[folderName];
+
+            foreach (object eMail in destFolder.Items)
+            {
+                try
+                {
+                    tgtMail = eMail as Outlook.MailItem;
+                    if (tgtMail != null)
+                    {
+                        string titleSubject = (string)tgtMail.Body;
+                        if (titleSubject.IndexOf(body) > 0)
+                        {
+                            Console.WriteLine("Subject : " + tgtMail.Subject);
+                            Console.WriteLine("Sender Name : " + tgtMail.SenderName);
+                            Console.WriteLine("Body : " + tgtMail.HTMLBody);
+                            Console.WriteLine("Data : " + tgtMail.SentOn.ToLongDateString() + " " + tgtMail.SentOn.ToLongTimeString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
     }
 }

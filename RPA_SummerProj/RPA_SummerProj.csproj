@@ -61,6 +61,9 @@
     <Compile Include="core\module\MySqlReturnSingleInt.cs" />
     <Compile Include="core\module\MySqlReturnTable.cs" />
     <Compile Include="core\module\OutlookDeleteBySubject.cs" />
+    <Compile Include="core\module\OutlookFindByBody.cs" />
+    <Compile Include="core\module\OutlookFindBySubject.cs" />
+    <Compile Include="core\module\OutlookFindBySender.cs" />
     <Compile Include="core\module\OutlookMoveMailToFolder.cs" />
     <Compile Include="core\module\OutlookSend.cs" />
     <Compile Include="core\module\OutlookShowUnReadMSG.cs" />

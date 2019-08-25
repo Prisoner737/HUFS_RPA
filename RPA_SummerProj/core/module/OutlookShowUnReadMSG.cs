@@ -11,7 +11,7 @@ namespace RPA_SummerProj.core.module
         protected override void Execute(CodeActivityContext context)
         {
             MailManager myMail = new MailManager();
-            myMail.receiveMail();
+            myMail.showUnReadMail();
         }
     }
 }
