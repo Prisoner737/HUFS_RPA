@@ -34,13 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="core\implement\Create.cs" />
+    <Compile Include="core\implement\MailManager.cs" />
+    <Compile Include="core\module\OutlookDeleteBySenderName.cs" />
+    <Compile Include="core\module\MySqlNoReturn.cs" />
+    <Compile Include="core\module\MySqlReturnSingleInt.cs" />
+    <Compile Include="core\module\MySqlReturnTable.cs" />
+    <Compile Include="core\module\OutlookDeleteBySubject.cs" />
+    <Compile Include="core\module\OutlookFindByBody.cs" />
+    <Compile Include="core\module\OutlookFindBySubject.cs" />
+    <Compile Include="core\module\OutlookFindBySender.cs" />
+    <Compile Include="core\module\OutlookMoveMailToFolder.cs" />
+    <Compile Include="core\module\OutlookSend.cs" />
+    <Compile Include="core\module\OutlookShowUnReadMSG.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -87,6 +104,12 @@
   <ItemGroup>
     <Folder Include="core\module\" />
     <Folder Include="testCode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="core\module\SqlTestActivity1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
