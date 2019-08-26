@@ -55,8 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\implement\ExcelManager.cs" />
     <Compile Include="core\implement\MailManager.cs" />
     <Compile Include="core\implement\MySqlManager.cs" />
+    <Compile Include="core\module\ExcelAppend.cs" />
+    <Compile Include="core\module\ExcelClose.cs" />
+    <Compile Include="core\module\ExcelCreate.cs" />
+    <Compile Include="core\module\ExcelDelete.cs" />
+    <Compile Include="core\module\ExcelOpen.cs" />
+    <Compile Include="core\module\ExcelRead_Cell.cs" />
+    <Compile Include="core\module\ExcelRead_Range.cs" />
+    <Compile Include="core\module\ExcelSave.cs" />
+    <Compile Include="core\module\ExcelWrite_Cell.cs" />
+    <Compile Include="core\module\ExcelWrite_Range.cs" />
     <Compile Include="core\module\OutlookDeleteBySenderName.cs" />
     <Compile Include="core\module\MySqlNoReturn.cs" />
     <Compile Include="core\module\MySqlReturnSingleInt.cs" />
