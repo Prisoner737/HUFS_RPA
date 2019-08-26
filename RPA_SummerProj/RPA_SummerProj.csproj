@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -41,8 +44,6 @@
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Activities" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,14 +69,14 @@
     <Compile Include="core\module\ExcelSave.cs" />
     <Compile Include="core\module\ExcelWrite_Cell.cs" />
     <Compile Include="core\module\ExcelWrite_Range.cs" />
-    <Compile Include="core\module\OutlookDeleteBySenderName.cs" />
     <Compile Include="core\module\MySqlNoReturn.cs" />
     <Compile Include="core\module\MySqlReturnSingleInt.cs" />
     <Compile Include="core\module\MySqlReturnTable.cs" />
+    <Compile Include="core\module\OutlookDeleteBySenderName.cs" />
     <Compile Include="core\module\OutlookDeleteBySubject.cs" />
     <Compile Include="core\module\OutlookFindByBody.cs" />
-    <Compile Include="core\module\OutlookFindBySubject.cs" />
     <Compile Include="core\module\OutlookFindBySender.cs" />
+    <Compile Include="core\module\OutlookFindBySubject.cs" />
     <Compile Include="core\module\OutlookMoveMailToFolder.cs" />
     <Compile Include="core\module\OutlookSend.cs" />
     <Compile Include="core\module\OutlookShowUnReadMSG.cs" />
@@ -117,10 +118,8 @@
     <Folder Include="testCode\" />
   </ItemGroup>
   <ItemGroup>
-    <XamlAppDef Include="core\module\SqlTestActivity1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </XamlAppDef>
+    <Content Include="core\implement\Readme.txt" />
+    <Content Include="core\module\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

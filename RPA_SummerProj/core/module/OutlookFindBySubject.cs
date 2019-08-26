@@ -19,6 +19,7 @@ namespace RPA_SummerProj.core.module
             string tgtFolder = context.GetValue(this.folderName);
             MailManager myMail = new MailManager();
             myMail.findMailBySubject(tgtSubject, tgtFolder);
+
         }
     }
 }

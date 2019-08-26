@@ -7,7 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace RPA_SummerProj.core.module
 {
 
-    public sealed class Save : CodeActivity
+    public sealed class ExcelSave : CodeActivity
     {
         public InArgument<object> instance { get; set; }
         public InArgument<string> Path { get; set; }

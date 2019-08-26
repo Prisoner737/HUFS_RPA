@@ -8,7 +8,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace RPA_SummerProj.core.module
 {
 
-    public sealed class Close : CodeActivity
+    public sealed class ExcelClose : CodeActivity
     {
         public InArgument<object> instance { get; set; }
         public InArgument<string> instanceName { get; set; }

@@ -7,7 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace RPA_SummerProj.core.module
 {
 
-    public sealed class Open : CodeActivity
+    public sealed class ExcelOpen : CodeActivity
     {
         public InArgument<string> Path { get; set; }
         public InArgument<string> SheetName { get; set; }
